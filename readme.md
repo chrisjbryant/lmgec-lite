@@ -76,7 +76,7 @@ Having installed and trained a model, the correction program can be run as:
 ```
 python3 lmgec.py <text_file> -mdl <model_file> -o <out_file>
 ```
-The input text file must be word tokenized with one sentence per line. The model file should point to the 1b.bin file (or equivalent) as described earlier. The output file will be the corrected version of the input file.  
+The input text file must be word tokenized (i.e. plain text separated by whitespace) with one sentence per line. The model file should point to the 1b.bin file (or equivalent) as described earlier. The output file will be the corrected version of the input file.  
 
 ### Advanced
 
