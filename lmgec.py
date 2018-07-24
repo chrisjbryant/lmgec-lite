@@ -25,8 +25,13 @@ def main(args):
 			if sent.isupper(): 
 				sent = sent.lower()
 				upper = True
+			# Strip whitespace and split sent into tokens.
+			sent = sent.strip().split()
+			# If the line is empty, preserve the newline in output and continue
+			if not sent: 
+				out_sents.write("\n")
+				continue
 			# Search for and make corrections while has_errors is true
-			sent = sent.split()
 			has_errors = True
 			# Iteratively correct errors one at a time until there are no more.
 			while has_errors:
