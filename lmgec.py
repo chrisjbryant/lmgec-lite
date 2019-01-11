@@ -50,7 +50,9 @@ def loadResources(args):
 	# Get base working directory.
 	basename = os.path.dirname(os.path.realpath(__file__))
 	# Language model built by KenLM: https://github.com/kpu/kenlm
-	lm = kenlm.Model(args.model)
+	c = kenlm.Config()
+	c.load_method = kenlm.LoadMethod.LAZY
+	lm = kenlm.Model(args.model, c)
 	# Load spaCy
 	nlp = spacy.load("en")
 	# Hunspell spellchecker: https://pypi.python.org/pypi/CyHunspell
